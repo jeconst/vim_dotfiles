@@ -44,6 +44,7 @@ set dir=/tmp//
 set scrolloff=5
 set ignorecase
 set smartcase
+set wildmenu
 set wildignore+=*.pyc,*.o,*.class,*.lo,.git,vendor/*,node_modules/**,bower_components/**,*/build_gradle/*,*/build_intellij/*,*/build/*,*/cassandra_data/*
 set tags+=gems.tags
 set mouse=
@@ -335,8 +336,6 @@ map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal bu
 map <silent> <LocalLeader>nh :nohls<CR>
 
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
-
-cnoremap <Tab> <C-L><C-D>
 
 nnoremap <silent> k gk
 nnoremap <silent> j gj
