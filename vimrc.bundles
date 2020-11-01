@@ -63,6 +63,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tfnico/vim-gradle'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
