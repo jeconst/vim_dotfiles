@@ -56,6 +56,7 @@ if v:version > 704 || v:version == 704 && has('patch2201') " signcolumn wasn't a
 endif
 set complete-=t " Don't use tags for autocomplete
 set updatetime=200
+set autoread
 
 if version >= 703
   set undodir=~/.vim/undodir
