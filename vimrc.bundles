@@ -48,7 +48,6 @@ Plug 'junegunn/fzf.vim', {'commit': '65edb6ad99b51514aaf29afc25e35ce5f05281ba'}
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'markcornick/vim-bats'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
