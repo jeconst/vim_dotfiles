@@ -147,6 +147,7 @@ let g:ale_set_highlights = 0              " Disable highlighting as it interfere
 let g:ale_linters = {}
 let g:ale_linters['puppet'] = ['puppetlint']
 let g:ale_linters['elixir'] = ['mix']
+let g:ale_linters['sh'] = ['shellcheck']
 if filereadable(expand(".rubocop.yml"))
   let g:ale_linters['ruby'] = ['rubocop']
 endif
