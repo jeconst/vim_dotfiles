@@ -308,12 +308,8 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 
 " vim-unimpaired
 
-nmap <silent> <C-k> <Plug>unimpairedMoveUp
-nmap <silent> <C-j> <Plug>unimpairedMoveDown
 nmap <silent> ]h :GitGutterNextHunk<CR>
 nmap <silent> [h :GitGutterPrevHunk<CR>
-xmap <silent> <C-k> <Plug>unimpairedMoveSelectionUp<esc>gv
-xmap <silent> <C-j> <Plug>unimpairedMoveSelectionDown<esc>gv
 
 " GitHubURL
 map <silent> <LocalLeader>gh :GitHubURL<CR>
