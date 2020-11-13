@@ -145,17 +145,21 @@ let g:ale_lint_on_insert_leave = 1        " Automatically lint when leaving inse
 let g:ale_set_signs = 1                   " Enable signs showing in the gutter to reduce interruptive visuals
 let g:ale_linters_explicit = 1            " Only run linters that are explicitly listed below
 let g:ale_set_highlights = 0              " Disable highlighting as it interferes with readability and accessibility
+let g:ale_fix_on_save = 0
+
 let g:ale_linters = {}
+let g:ale_fixers = {}
+
 let g:ale_linters['puppet'] = ['puppetlint']
-let g:ale_linters['elixir'] = ['mix']
 let g:ale_linters['sh'] = ['shellcheck']
+
 if filereadable(expand(".rubocop.yml"))
   let g:ale_linters['ruby'] = ['rubocop']
+  let g:ale_fixers['ruby'] = ['rubocop']
 endif
 
-let g:ale_fixers = {}
+let g:ale_linters['elixir'] = ['mix']
 let g:ale_fixers['elixir'] = ['mix_format']
-let g:ale_fix_on_save = 1
 
 let black = system('grep -q black Pipfile')
 if v:shell_error == 0
