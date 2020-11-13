@@ -106,7 +106,7 @@ autocmd FileType java runtime java_mappings.vim
 let g:wstrip_highlight = 0
 " strip trailing whitespace on save for any lines modified for the following
 " languages
-autocmd FileType ruby,java,python,c,cpp,sql,puppet let b:wstrip_auto = 1
+autocmd FileType ruby,java,python,c,cpp,sql,puppet,rust let b:wstrip_auto = 1
 
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 autocmd FileType tex,gitcommit setlocal spell spelllang=en_us
@@ -150,21 +150,12 @@ let g:ale_fix_on_save = 0
 let g:ale_linters = {}
 let g:ale_fixers = {}
 
-let g:ale_linters['puppet'] = ['puppetlint']
-let g:ale_linters['sh'] = ['shellcheck']
-
-if filereadable(expand(".rubocop.yml"))
-  let g:ale_linters['ruby'] = ['rubocop']
-  let g:ale_fixers['ruby'] = ['rubocop']
-endif
-
-let g:ale_linters['elixir'] = ['mix']
-let g:ale_fixers['elixir'] = ['mix_format']
-
-let black = system('grep -q black Pipfile')
-if v:shell_error == 0
-  let g:ale_fixers['python'] = ['black']
-  let g:ale_python_black_auto_pipenv = 1
+if filereadable(expand(".ale_fix_on_save"))
+  " add an empty file named .ale_fix_on_save
+  " in any repository to enable ale fixers
+  " otherwise set the below line in your vimrc_local
+  " without the conditional
+  let g:ale_fix_on_save = 1
 endif
 
 let html_use_css=1
@@ -314,6 +305,15 @@ map <silent> <C-p> :Files<CR>
 
 " Ack
 map <LocalLeader>aw :Ack '<C-R><C-W>'
+
+" vim-unimpaired
+
+nmap <silent> <C-k> <Plug>unimpairedMoveUp
+nmap <silent> <C-j> <Plug>unimpairedMoveDown
+nmap <silent> ]h :GitGutterNextHunk<CR>
+nmap <silent> [h :GitGutterPrevHunk<CR>
+xmap <silent> <C-k> <Plug>unimpairedMoveSelectionUp<esc>gv
+xmap <silent> <C-j> <Plug>unimpairedMoveSelectionDown<esc>gv
 
 " GitHubURL
 map <silent> <LocalLeader>gh :GitHubURL<CR>

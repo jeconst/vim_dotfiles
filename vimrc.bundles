@@ -11,6 +11,8 @@ endif
 Plug 'akhaku/vim-java-unused-imports'
 Plug 'aklt/plantuml-syntax'
 Plug 'arthurxavierx/vim-caser'
+" Show git diff via Vim sign column.
+Plug 'airblade/vim-gitgutter'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-glaive'
 Plug 'google/vim-codefmt'
@@ -83,9 +85,7 @@ Plug 'vim-scripts/groovyindent-unix'
 Plug 'vim-scripts/mako.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'rodjek/vim-puppet'
-" use diff-error branch until the PR is merged into master, as it fixes wstrip
-" usage outside of git repos
-Plug 'tweekmonster/wstrip.vim'
+Plug 'tweekmonster/wstrip.vim', { 'commit': '02826534e60a492b58f9515f5b8225d86f74fbc8' }
 Plug 'leafgarland/typescript-vim'
 
 if v:version >= 800 || has('nvim')

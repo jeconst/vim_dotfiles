@@ -19,5 +19,13 @@ map <silent> <LocalLeader>AA   :A<CR>
 map <silent> <LocalLeader>AV   :AV<CR>
 map <silent> <LocalLeader>AS   :AS<CR>
 
+" Restore vim-diff shortcuts
+silent! unmap ]c
+map <silent> ]C :RubyBlockSpecParentContext<CR>
+
 map <LocalLeader>rd Orequire "pry"; binding.pry<ESC>
+
+" Search for tag
+nmap <silent> <LocalLeader>] :Tags '<C-R><C-W> <CR>
+
 setlocal isk+=?
