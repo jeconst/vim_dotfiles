@@ -1,4 +1,4 @@
-if filereadable(expand(".rubocop.yml"))
-  let g:ale_linters['ruby'] = ['rubocop']
-  let g:ale_fixers['ruby'] = ['rubocop']
+if !empty(findfile('.rubocop.yml', '.;'))
+  let b:ale_linters = ['rubocop']
+  let b:ale_fixers = ['rubocop']
 endif
