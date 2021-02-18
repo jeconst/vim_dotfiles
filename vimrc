@@ -98,6 +98,7 @@ autocmd FileType tex setlocal textwidth=78
 
 autocmd FileType ruby runtime ruby_mappings.vim
 autocmd FileType cs runtime dotnet_mappings.vim
+autocmd FileType javascript runtime javascript_mappings.vim
 autocmd FileType python runtime python_mappings.vim
 autocmd FileType java runtime java_mappings.vim
 
@@ -281,6 +282,22 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+if executable('gopls')
+  function! s:register_lsp_golang()
+    if exists('*lsp#register_command')
+      call lsp#register_server({
+            \ 'name': 'go-lang',
+            \ 'cmd': {server_info->['gopls']},
+            \ 'allowlist': ['go'],
+            \ })
+    else
+      echoerr 'Function lsp#register_command() not found, please update your vim-lsp installation'
+    endif
+  endfunction
+
+  autocmd User lsp_setup call s:register_lsp_golang()
+endif
+
 " Remove unused imports for Java
 autocmd FileType java autocmd BufWritePre * :UnusedImports
 
@@ -362,10 +379,10 @@ map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 
 " Vimux
-map <silent> <LocalLeader>vl :wa<CR> :VimuxRunLastCommand<CR>
-map <silent> <LocalLeader>vi :wa<CR> :VimuxInspectRunner<CR>
-map <silent> <LocalLeader>vk :wa<CR> :VimuxInterruptRunner<CR>
-map <silent> <LocalLeader>vx :wa<CR> :VimuxClosePanes<CR>
+map <silent> <LocalLeader>vl :wa<CR>:VimuxRunLastCommand<CR>
+map <silent> <LocalLeader>vi :wa<CR>:VimuxInspectRunner<CR>
+map <silent> <LocalLeader>vk :wa<CR>:VimuxInterruptRunner<CR>
+map <silent> <LocalLeader>vx :wa<CR>:VimuxClosePanes<CR>
 map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
 vmap <silent> <LocalLeader>vs "vy :call VimuxRunCommand(@v)<CR>
 nmap <silent> <LocalLeader>vs vip<LocalLeader>vs<CR>
