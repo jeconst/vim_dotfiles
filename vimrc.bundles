@@ -79,6 +79,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-abolish'
 Plug 'uarun/vim-protobuf'
+Plug 'unkiwii/vim-nerdtree-sync', { 'commit': 'f0ec649ac2045f6bf9e32efffbdc3e7aaee419d2' }
 Plug 'vim-ruby/vim-ruby', { 'commit': '84565856e6965144e1c34105e03a7a7e87401acb' }
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/VimClojure'

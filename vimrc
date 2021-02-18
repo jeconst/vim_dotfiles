@@ -326,6 +326,8 @@ map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 
+let g:nerdtree_sync_cursorline = 1
+
 " FZF
 function! SmartFuzzy()
   let root = split(system('git rev-parse --show-toplevel'), '\n')
